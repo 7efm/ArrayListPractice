@@ -5,14 +5,17 @@
  * @author (your name)
  * @version (a version number or a date)
  */
+import java.lang.Math;
 import java.util.ArrayList;
 import java.util.List;
 public class ArrayListP
 {
     ArrayList<String> colors;
     ArrayList<Integer> numbers;
+
     // 1
     public ArrayListP(){
+
         colors = new ArrayList<String>();
         numbers = new ArrayList<Integer>();
         colors.add("Red");
@@ -67,12 +70,35 @@ public class ArrayListP
     public void sortByLengthD(){
         int bigger;
         int smaller;
-        for(int i = 0; i <= numbers.size(); i++){
-            if(numbers.get(i) < numbers.get(i+1)){
-                smaller = numbers.get(i); bigger = numbers.get(i+1);
-                numbers.set(i, bigger); numbers.set(i+1, smaller);
+        for(int g = 0; g <= numbers.size(); g++){
+            for(int i = 0; i < numbers.size() -1; i++){
+                if(numbers.get(i) < numbers.get(i+1)){
+                    smaller = numbers.get(i); bigger = numbers.get(i+1);
+                    numbers.set(i, bigger); numbers.set(i+1, smaller);
+                }
             }
         }
 
+    }
+    // 9 
+    public ArrayList<String> copyArrayList(){
+        ArrayList<String> colorsCopy;
+        colorsCopy = new ArrayList<String>();
+        for(String str : colors){
+            colorsCopy.add(str);
+        }
+        return colorsCopy;
+    }
+    // 10
+    public void shuffleArrayList(){    
+        String second;
+        String first;
+        for(int i = 0; i < colors.size(); i++){
+            int randIndex = (int)(Math.random()*colors.size());
+            second = colors.get(randIndex);
+            first = colors.get(i);
+            colors.set(i,second);
+            colors.set(randIndex, first);
+        }
     }
 }
