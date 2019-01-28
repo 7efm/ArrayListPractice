@@ -29,6 +29,7 @@ public class ArrayListP
         numbers.add(2);
         numbers.add(3);
         numbers.add(4);
+
         for(int str : numbers){
             System.out.println(str);
         }
@@ -100,5 +101,27 @@ public class ArrayListP
             colors.set(i,second);
             colors.set(randIndex, first);
         }
+    }
+    // 11
+    public void reverseElements(){
+        int counter = 0;
+        int size = colors.size()-1;
+        String second; 
+        String first;
+        for(int i = 0; i < colors.size()/2; i++){
+            first = colors.get(i);
+            second = colors.get(i+size-counter);
+            colors.set(i,second);
+            colors.set(i+size-counter, first);
+            counter += 2;
+        }
+
+    }
+    // 14
+    public void swap2Colors(int firstIndex, int secondIndex){
+        String first = colors.get(firstIndex); 
+        String second = colors.get(secondIndex);
+        colors.set(firstIndex, second);
+        colors.set(secondIndex, first);
     }
 }
