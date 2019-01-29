@@ -2,8 +2,8 @@
 /**
  * Write a description of class ArrayListP here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Jacinto G
+ * @version 1.29
  */
 import java.lang.Math;
 import java.util.ArrayList;
@@ -15,7 +15,6 @@ public class ArrayListP
 
     // 1
     public ArrayListP(){
-
         colors = new ArrayList<String>();
         numbers = new ArrayList<Integer>();
         colors.add("Red");
@@ -123,5 +122,24 @@ public class ArrayListP
         String second = colors.get(secondIndex);
         colors.set(firstIndex, second);
         colors.set(secondIndex, first);
+    }
+    // 17
+    public void emptyArray(){
+        for(int i = colors.size()-1; i >= 0; i--){
+            colors.remove(i);
+        }
+    }
+    // 18
+    public boolean testIfEmpty(){
+        for(String str:colors){
+            if(str != null){
+                return false;
+            }
+        }
+        return true;
+    }
+    // 21
+    public void replaceSecond(String replacer){
+        colors.set(1, replacer);
     }
 }
