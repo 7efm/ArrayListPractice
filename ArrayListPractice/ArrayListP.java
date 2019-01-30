@@ -28,7 +28,6 @@ public class ArrayListP
         numbers.add(2);
         numbers.add(3);
         numbers.add(4);
-
         for(int str : numbers){
             System.out.println(str);
         }
@@ -94,7 +93,7 @@ public class ArrayListP
         String second;
         String first;
         for(int i = 0; i < colors.size(); i++){
-            int randIndex = (int)(Math.random()*colors.size());
+            int randIndex = (int)(Math.random()*colors.size()-1);
             second = colors.get(randIndex);
             first = colors.get(i);
             colors.set(i,second);
@@ -115,6 +114,15 @@ public class ArrayListP
             counter += 2;
         }
 
+    }
+
+    public ArrayList<String> extract(int firstIndex, int secondIndex){
+        ArrayList<String> extracted;
+        extracted = new ArrayList<String>();
+        for(int i = firstIndex; i <= secondIndex; i++){
+            extracted.add(colors.get(i));
+        }
+        return extracted;
     }
     // 14
     public void swap2Colors(int firstIndex, int secondIndex){
@@ -141,5 +149,11 @@ public class ArrayListP
     // 21
     public void replaceSecond(String replacer){
         colors.set(1, replacer);
+    }
+    // 22
+    public void printElements(){
+        for(int i = 0; i < colors.size(); i++){
+            System.out.println(colors.get(i));
+        }
     }
 }
