@@ -115,7 +115,7 @@ public class ArrayListP
         }
 
     }
-
+    // 12
     public ArrayList<String> extract(int firstIndex, int secondIndex){
         ArrayList<String> extracted;
         extracted = new ArrayList<String>();
@@ -130,6 +130,22 @@ public class ArrayListP
         String second = colors.get(secondIndex);
         colors.set(firstIndex, second);
         colors.set(secondIndex, first);
+    }
+    // 15
+    public ArrayList<String> join(){
+        ArrayList<String> joined = new ArrayList<String>();
+        ArrayList<String> colors2 = new ArrayList<String>();
+        colors2.add("Red2");
+        colors2.add("Blue2");
+        colors2.add("Green2");
+        colors2.add("Mahogany2");
+        for(String str: colors){
+            joined.add(str);
+        }
+        for(String str: colors2){
+            joined.add(str);
+        }
+        return joined;
     }
     // 17
     public void emptyArray(){
@@ -146,6 +162,12 @@ public class ArrayListP
         }
         return true;
     }
+    // 20
+    public void increaseSize(int numberOfIncreases){
+        for(int i = 0; i < numberOfIncreases; i++){
+            colors.add(null);
+        }
+    }
     // 21
     public void replaceSecond(String replacer){
         colors.set(1, replacer);
@@ -156,4 +178,5 @@ public class ArrayListP
             System.out.println(colors.get(i));
         }
     }
+
 }
